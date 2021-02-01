@@ -1,0 +1,44 @@
+.search_form {
+  margin: 30px 0;
+
+  >input[type="text"] {
+    padding: 8px 12px;
+    border: 1px solid #dddd;
+    width: 500px;
+    height: 40px;
+    box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+    outline: none;
+
+    @media screen and (max-width:500px) {
+      width: 200px;
+    }
+
+  }
+
+  >input[type="submit"] {
+    padding: 12px 18px;
+    border: 1px solid #1d96e8;
+    height: 56px;
+    box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+    background-color: #1d96e8;
+    color: #fff;
+    font-size: 1rem;
+    letter-spacing: .15rem;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    &:hover {
+      color: #fff;
+      border: 1px solid darken(#1d96e8, 15%);
+
+      background-color: darken(#1d96e8, 15%);
+
+      &:before {
+        width: 100%;
+      }
+    }
+
+  }
+}

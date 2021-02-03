@@ -1,10 +1,10 @@
 import React from "react";
-import Filter from "../Search/Search";
+import Filter from "../Filter/Filter";
 import Card from "./Card";
 
 const Cards = ({ result }) => {
   return (
-    <div>
+    <div className="cards_section">
       <h1>Similar articles</h1>
       <Filter />
       <ul className="cards_wrapper">

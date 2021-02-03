@@ -4,7 +4,7 @@ import arrow from "../../images/arrow-down.png";
 import hour from "../../images/hour-svgrepo-com.svg";
 const Filter = () => {
   return (
-    <div>
+    <div className="filter">
       <span>Filters : </span>
       <span>
         <img className="icon" src={newsletter} alt="newsletter-icon" />my

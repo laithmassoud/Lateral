@@ -1,8 +1,7 @@
 import React from "react";
-
-import "./App.scss";
 import Cards from "./components/Cards/Cards";
-import Form from './components/Form/Form'
+import Search from './components/Search/Search'
+import "./App.scss";
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 function useAsyncHook(url) {
@@ -27,7 +26,7 @@ function useAsyncHook(url) {
 
           const responseBody = json.body;
 
-          const responseSimilerArticle = await fetch(
+          const responseSimilarArticle = await fetch(
             "https://news-api.lateral.io/documents/similar-to-text",
             {
               body: `{"text": ${JSON.stringify(responseBody)}}`,
@@ -40,7 +39,7 @@ function useAsyncHook(url) {
               mode: "cors",
             }
           );
-          const SimilerArticleJson = await responseSimilerArticle.json();
+          const SimilerArticleJson = await responseSimilarArticle.json();
 
           setResult(SimilerArticleJson);
 
@@ -66,7 +65,9 @@ function App() {
   return (
     <div className="App">
       <h1>Lateral</h1>
-    <Form
+      <h2>enter an URL in the input field </h2>
+
+    <Search
       onSubmit={e => {
         e.preventDefault();
         setQuery(search);
@@ -76,7 +77,7 @@ function App() {
     {loading === "false"
       ? <h1>Search for Similar Articles</h1>
       : loading === "null"
-        ? <h1>No result Found</h1>
+        ? <h1>No result Found, try with another URL</h1>
         : <Cards result={result} />}
   </div>
   );

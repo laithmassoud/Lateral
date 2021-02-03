@@ -1,5 +1,5 @@
 import React from "react";
-import './form.scss'
+import './search.scss'
 
 const Form = ({ onSubmit, onChange }) => {
   return (
